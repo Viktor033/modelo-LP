@@ -1,0 +1,286 @@
+/* === FUENTES Y ESTILO BASE === */
+body {
+  font-family: 'Poppins', sans-serif;
+  padding-top: 80px; /* Evita que la navbar tape el hero */
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+              url('/IMG/consultorio\ kinesiologico.jpg') center/cover no-repeat;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.hero p {
+  font-size: 1.25rem;
+  margin-top: 1rem;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 70vh;
+  }
+  .hero h1 {
+    font-size: 2rem;
+  }
+}
+
+/* === BOTONES === */
+.btn-primary {
+  background-color: #007bff;
+  border: none;
+  transition: background 0.3s;
+}
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+/* === CARDS === */
+.card {
+  border: none;
+  border-radius: 10px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+  will-change: transform, opacity;
+}
+
+/* Animación de entrada */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card.visible {
+  opacity: 1;
+  transform: translateY(0);
+  animation: fadeInUp 1.5s ease forwards;
+}
+
+/* Hover visible en cualquier momento */
+.card:hover {
+  opacity: 1 !important; /* asegúrate de que sea visible */
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+/* Animación de entrada */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card.visible {
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+/* Hover */
+.card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* === IMÁGENES EN LAS CARDS === */
+.card-img-top {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.4s ease;
+}
+
+.card:hover .card-img-top {
+  transform: scale(1.05);
+}
+
+
+/* === BOTÓN FLOTANTE DE WHATSAPP === */
+.whatsapp-float {
+  position: fixed;
+  width: 65px;
+  height: 65px;
+  bottom: 25px;
+  right: 25px;
+  background-color: #25d366;
+  color: white;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 38px;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+.whatsapp-float:hover {
+  background-color: #1ebe5d;
+  transform: scale(1.1);
+}
+
+/* === UBICACIÓN Y HORARIOS === */
+#ubicacion {
+  background-color: #111;
+  color: #fff;
+}
+#ubicacion h2, 
+#ubicacion h3 {
+  color: #fff;
+}
+#ubicacion .mapa-container iframe {
+  border-radius: 10px;
+}
+#ubicacion form {
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+#ubicacion form:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+/* === NAVBAR === */
+#navbar {
+  background: #000; /* fondo negro permanente */
+  transition: all 0.4s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+#navbar.scrolled {
+  background: #000; /* mantiene negro al hacer scroll */
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.6);
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  color: #00aaff !important; /* color celeste para contraste */
+}
+
+.nav-link {
+  color: #fff !important;
+  margin: 0 10px;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: #00aaff !important; /* efecto hover celeste */
+}
+
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  color: #00aaff !important;
+}
+.nav-link {
+  color: #fff !important;
+  margin: 0 10px;
+  transition: color 0.3s;
+}
+.nav-link:hover {
+  color: #00aaff !important;
+}
+.navbar-toggler {
+  border: none;
+}
+
+/* === SECCIÓN PROFESIONAL EXTENDIDA === */
+#profesional {
+  padding: 120px 0;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+#profesional .container {
+  max-width: 1100px;
+}
+
+.typing-effect {
+  display: inline-block;
+  border-right: 3px solid #00aaff;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+  font-size: 2.2rem;
+  color: #111;
+  animation: typing 3s steps(30, end) forwards, blink 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+/* Imagen */
+.profesional-img {
+  max-width: 420px;
+  opacity: 0;
+  transform: translateX(100px);
+  transition: all 1s ease-out;
+}
+.profesional-img.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Texto con fade-up */
+.fade-text {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s ease-out;
+}
+.fade-text.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Social links */
+.social-links a {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+.social-links a:hover {
+  transform: translateY(-3px);
+  color: #00aaff !important;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  #profesional {
+    text-align: center;
+  }
+  .profesional-img {
+    max-width: 80%;
+    margin-top: 30px;
+  }
+}
+
+

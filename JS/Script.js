@@ -1,0 +1,80 @@
+// === FORMULARIO DE CONTACTO ===
+document.getElementById('form-consulta').addEventListener('submit', (e) => {
+  e.preventDefault();
+  alert('¡Gracias por tu consulta! Te contactaremos pronto.');
+  e.target.reset();
+});
+
+// === ANIMACIÓN DE ENTRADA DE CARDS ===
+document.addEventListener("DOMContentLoaded", () => {
+  const cards = document.querySelectorAll('.card');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  cards.forEach(card => observer.observe(card));
+});
+
+// === NAVBAR CON EFECTO AL HACER SCROLL ===
+window.addEventListener("scroll", () => {
+  const navbar = document.getElementById("navbar");
+  if (window.scrollY > 50) {
+    navbar.classList.add("scrolled");
+  } else {
+    navbar.classList.remove("scrolled");
+  }
+});
+
+// === SCROLL SUAVE ENTRE SECCIONES ===
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+});
+
+// === EFECTO DE ESCRITURA (una sola vez, sin duplicado) ===
+document.addEventListener("DOMContentLoaded", () => {
+  const typing = document.querySelector('.typing-effect');
+  const text = "Lic. María González";
+  let i = 0;
+
+  typing.textContent = ""; // Limpiar antes de escribir
+
+  function typeWriter() {
+    if (i < text.length) {
+      typing.textContent += text.charAt(i);
+      i++;
+      setTimeout(typeWriter, 100);
+    }
+  }
+
+  typeWriter();
+});
+
+// === ANIMACIÓN DE FOTO Y TEXTOS ===
+document.addEventListener("DOMContentLoaded", () => {
+  const img = document.querySelector('.profesional-img');
+  const fadeTexts = document.querySelectorAll('.fade-text');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  if (img) observer.observe(img);
+  fadeTexts.forEach(text => observer.observe(text));
+});
