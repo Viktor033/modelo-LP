@@ -31,6 +31,7 @@
           <li class="nav-item"><a class="nav-link active" href="#hero">Inicio</a></li>
           <li class="nav-item"><a class="nav-link" href="#profesional">¿Quién soy?</a></li>
           <li class="nav-item"><a class="nav-link" href="#tratamientos">Tratamientos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#testimonios">Opiniones</a></li>
           <li class="nav-item"><a class="nav-link" href="#ubicacion">Ubicación</a></li>
           <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
         </ul>
@@ -149,6 +150,59 @@
     </div>
   </section>
 
+  <!-- ===== TESTIMONIOS ===== -->
+  <section id="testimonios" class="py-5 bg-white">
+    <div class="container text-center">
+      <h2 class="fw-bold mb-5">Lo que dicen mis pacientes</h2>
+      <div class="row g-4">
+        
+        <!-- Testimonio 1 -->
+        <div class="col-md-4">
+          <div class="card testimonial-card border-0 h-100 p-4 shadow-sm bg-light">
+            <div class="card-body">
+              <div class="mb-3 text-warning fs-5">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              </div>
+              <p class="card-text fst-italic text-muted">"Llegué con un dolor de espalda crónico y en pocas sesiones noté un cambio increíble. La atención es súper profesional y cálida."</p>
+              <h6 class="fw-bold mt-4 mb-0">- Ana García</h6>
+              <small class="text-primary fw-bold">Rehabilitación Lumbar</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonio 2 -->
+        <div class="col-md-4">
+          <div class="card testimonial-card border-0 h-100 p-4 shadow-sm bg-light">
+             <div class="card-body">
+              <div class="mb-3 text-warning fs-5">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              </div>
+              <p class="card-text fst-italic text-muted">"Excelente profesional. Me ayudó a recuperarme de mi lesión de rodilla para volver a jugar al fútbol. Totalmente recomendada."</p>
+              <h6 class="fw-bold mt-4 mb-0">- Carlos Ruiz</h6>
+               <small class="text-primary fw-bold">Deportista Amateur</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonio 3 -->
+        <div class="col-md-4">
+          <div class="card testimonial-card border-0 h-100 p-4 shadow-sm bg-light">
+             <div class="card-body">
+              <div class="mb-3 text-warning fs-5">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
+              </div>
+              <p class="card-text fst-italic text-muted">"Muy buen trato y explicaciones claras. Me sentí contenida durante todo el post-operatorio. ¡Gracias por todo!"</p>
+              <h6 class="fw-bold mt-4 mb-0">- Laura Méndez</h6>
+               <small class="text-primary fw-bold">Post-operatorio</small>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+
+  </section>
+  
   <!-- ===== UBICACIÓN Y HORARIOS ===== -->
   <section id="ubicacion" class="bg-dark text-white py-5">
     <div class="container">
@@ -180,13 +234,13 @@
         <h3 class="fw-bold mb-4 text-center">Envíanos tu consulta</h3>
         <form id="form-consulta" class="bg-light text-dark p-4 rounded shadow">
           <div class="mb-3">
-            <input type="text" class="form-control" placeholder="Tu nombre" required>
+            <input type="text" id="input-nombre" class="form-control" placeholder="Tu nombre" required>
           </div>
           <div class="mb-3">
-            <input type="email" class="form-control" placeholder="Tu correo" required>
+            <input type="email" id="input-email" class="form-control" placeholder="Tu correo" required>
           </div>
           <div class="mb-3">
-            <textarea class="form-control" rows="4" placeholder="Tu mensaje..." required></textarea>
+            <textarea id="input-mensaje" class="form-control" rows="4" placeholder="Tu mensaje..." required></textarea>
           </div>
           <button type="submit" class="btn btn-primary w-100">Enviar</button>
         </form>

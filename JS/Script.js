@@ -1,7 +1,19 @@
 // === FORMULARIO DE CONTACTO ===
 document.getElementById('form-consulta').addEventListener('submit', (e) => {
   e.preventDefault();
-  alert('¡Gracias por tu consulta! Te contactaremos pronto.');
+
+  const nombre = document.getElementById('input-nombre').value;
+  const email = document.getElementById('input-email').value;
+  const mensaje = document.getElementById('input-mensaje').value;
+
+  const telefono = "5493794636696";
+
+  const texto = `Hola, mi nombre es ${nombre}. \nCorreo: ${email} \nMensaje: ${mensaje}`;
+  const url = `https://wa.me/${telefono}?text=${encodeURIComponent(texto)}`;
+
+  // Abrir WhatsApp en nueva pestaña
+  window.open(url, '_blank');
+
   e.target.reset();
 });
 
