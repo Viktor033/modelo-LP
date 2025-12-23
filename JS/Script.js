@@ -78,3 +78,25 @@ document.addEventListener("DOMContentLoaded", () => {
   if (img) observer.observe(img);
   fadeTexts.forEach(text => observer.observe(text));
 });
+
+// === BOTÓN SCROLL TO TOP ===
+const scrollTopBtn = document.getElementById("scrollToTopBtn");
+
+if (scrollTopBtn) {
+  // Mostrar/Ocultar botón al hacer scroll
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      scrollTopBtn.classList.add("show");
+    } else {
+      scrollTopBtn.classList.remove("show");
+    }
+  });
+
+  // Acción de volver arriba
+  scrollTopBtn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+}
