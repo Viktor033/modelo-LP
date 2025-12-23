@@ -31,13 +31,21 @@ window.addEventListener("scroll", () => {
   }
 });
 
-// === SCROLL SUAVE ENTRE SECCIONES ===
+// === SCROLL SUAVE ENTRE SECCIONES Y CIERRE DE MENÚ ===
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
     e.preventDefault();
     const target = document.querySelector(this.getAttribute('href'));
     if (target) {
       target.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Cerrar menú móvil si está abierto
+    const navbarCollapse = document.getElementById('navbarNav');
+    if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+      // Uso de la API de Bootstrap para cerrar
+      const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse) || new bootstrap.Collapse(navbarCollapse, { toggle: false });
+      bsCollapse.hide();
     }
   });
 });
