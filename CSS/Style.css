@@ -1,48 +1,65 @@
 /* === FUENTES Y ESTILO BASE === */
+/* Importar Open Sans */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
 body {
-  font-family: 'Poppins', sans-serif;
-  padding-top: 80px; /* Evita que la navbar tape el hero */
+  font-family: 'Open Sans', sans-serif;
+  padding-top: 0; /* Navbar será transparente/overlay */
+  color: #333;
 }
 
 /* ===== HERO SECTION ===== */
 .hero {
-  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+  /* Fondo con tinte azulado como en la imagen */
+  background: linear-gradient(rgba(44, 82, 130, 0.85), rgba(44, 82, 130, 0.7)),
               url('/IMG/consultorio\ kinesiologico.jpg') center/cover no-repeat;
-  min-height: 90vh;
+  min-height: 85vh;
   display: flex;
   align-items: center;
-  justify-content: center;
-  text-align: center;
+  /* La imagen muestra texto a la izquierda */
+  text-align: left; 
+  margin-top: -80px; /* Para compensar navbar si es fixed */
+  padding-top: 100px;
 }
 
 .hero h1 {
   font-size: 3rem;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+  font-weight: 700;
+  text-shadow: none;
+  margin-bottom: 20px;
 }
 
 .hero p {
   font-size: 1.25rem;
-  margin-top: 1rem;
-  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
+  margin-bottom: 30px;
+  text-shadow: none;
+  font-weight: 400;
+  opacity: 0.9;
 }
 
 @media (max-width: 768px) {
   .hero {
     min-height: 70vh;
+    text-align: center;
   }
   .hero h1 {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
 }
 
 /* === BOTONES === */
 .btn-primary {
-  background-color: #007bff;
+  background-color: #0099ff; /* Azul brillante */
   border: none;
-  transition: background 0.3s;
+  border-radius: 50px; /* Bordes redondeados */
+  padding: 12px 30px;
+  font-weight: 600;
+  transition: all 0.3s;
 }
 .btn-primary:hover {
-  background-color: #0056b3;
+  background-color: #0077cc;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 153, 255, 0.3);
 }
 
 /* === CARDS === */
@@ -67,41 +84,23 @@ body {
   }
 }
 
-.card.visible {
-  opacity: 1;
-  transform: translateY(0);
-  animation: fadeInUp 1.5s ease forwards;
-}
-
-/* Hover visible en cualquier momento */
-.card:hover {
-  opacity: 1 !important; /* asegúrate de que sea visible */
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+/* === CARDS SERVICIOS === */
+.service-card {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: #fff;
+  border-radius: 12px !important;
 }
 
-
-/* Animación de entrada */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
 }
 
-.card.visible {
-  animation: fadeInUp 0.8s ease forwards;
+.icon-wrapper {
+  background: transparent;
 }
-
-/* Hover */
-.card:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+.icon-wrapper i {
+  color: #0099ff;
 }
 
 /* === IMÁGENES EN LAS CARDS === */
@@ -144,23 +143,22 @@ body {
 
 /* === UBICACIÓN Y HORARIOS === */
 #ubicacion {
-  background-color: #111;
-  color: #fff;
+  background-color: #1c2331 !important; /* Azul muy oscuro/Gris */
 }
-#ubicacion h2, 
-#ubicacion h3 {
-  color: #fff;
+
+/* Form inputs styling */
+#ubicacion .form-control:focus {
+  background-color: #fff;
+  box-shadow: 0 0 0 4px rgba(0, 153, 255, 0.1);
+  border-color: #0099ff;
 }
-#ubicacion .mapa-container iframe {
-  border-radius: 10px;
+
+/* Map preview hover effect */
+.map-preview {
+  transition: transform 0.3s ease;
 }
-#ubicacion form {
-  border: 1px solid rgba(255,255,255,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-#ubicacion form:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+.map-preview:hover {
+  transform: scale(1.02);
 }
 
 /* === NAVBAR === */
